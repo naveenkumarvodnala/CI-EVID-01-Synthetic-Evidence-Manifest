@@ -1,0 +1,9 @@
+{
+  "name": "ci-evid-01-synthetic-evidence-manifest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthetic CI evidence manifest validation example",
+  "scripts": {
+    "test": "node --test"
+  }
+}

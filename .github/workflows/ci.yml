@@ -1,0 +1,46 @@
+
+name: CI-EVID-01 Validation
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-evidence:
+    name: Validate Synthetic Evidence
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Validate matched evidence
+        run: node scripts/validate.js evidence/matched-record.json
+
+      - name: Validate stale evidence
+        shell: bash
+        run: |
+          if node scripts/validate.js evidence/stale-record.json; then
+            echo "ERROR: Stale evidence was unexpectedly accepted."
+            exit 1
+          else
+            echo "SUCCESS: Stale evidence was correctly rejected."
+          fi
