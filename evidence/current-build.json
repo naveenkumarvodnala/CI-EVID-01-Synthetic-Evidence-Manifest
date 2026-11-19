@@ -1,0 +1,10 @@
+{
+  "build_id": "synthetic-build-001",
+  "source": {
+    "commit": "a1b2c3d4",
+    "reference": "synthetic-main"
+  },
+  "test_config": {
+    "version": "tests-v1.0"
+  }
+}

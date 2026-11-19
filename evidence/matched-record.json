@@ -1,0 +1,7 @@
+{
+  "evidence_id": "CI-EVID-01-MATCHED",
+  "source_commit": "a1b2c3d4",
+  "test_config_version": "tests-v1.0",
+  "test_result": "PASSED",
+  "log_reference": "logs/build-001-test.log"
+}

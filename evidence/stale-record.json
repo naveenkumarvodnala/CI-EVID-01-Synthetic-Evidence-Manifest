@@ -1,0 +1,7 @@
+{
+  "evidence_id": "CI-EVID-01-STALE",
+  "source_commit": "oldcommit99",
+  "test_config_version": "tests-v0.9",
+  "test_result": "PASSED",
+  "log_reference": "logs/build-000-test.log"
+}
